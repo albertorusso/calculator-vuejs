@@ -12,17 +12,11 @@ storiesOf('Molecules - VCalculatorActions', module)
         buttonList: [
           {
             classModifier: 'action',
-            onClick: () => {
-              action('click')('ac button')
-            },
             text: 'AC',
             value: 'ac',
           },
           {
             classModifier: 'action-larger',
-            onClick: () => {
-              action('click')('save button')
-            },
             text: 'SAVE',
             value: 'save',
           }

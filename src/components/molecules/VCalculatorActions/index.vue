@@ -6,7 +6,7 @@
         :class-modifier="button.classModifier"
         :text="button.text"
         :value="button.value"
-        :onClick="button.onClick"
+        :onClick="onClick"
       />
   </div>
 </template>

@@ -16,5 +16,10 @@ export default {
         actionButtons: this.buttonList
       }
     }
+  },
+  methods: {
+    onClick(event) {
+      console.log('TODO: dispatch event to store', event.currentTarget.value)
+    }
   }
 }

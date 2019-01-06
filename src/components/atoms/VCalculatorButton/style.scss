@@ -13,6 +13,7 @@
   outline : none;
   position: relative;
   text-align: center;
+  width: 80px;
 
   &--action,
   &--action-larger {
@@ -54,5 +55,6 @@
 
   &--action-larger {
     flex: 0 0 160px;
+    width: 160px;
   }
 }

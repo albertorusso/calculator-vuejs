@@ -1,0 +1,28 @@
+@import '../../../global-styles/settings';
+
+.v-calculator-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  color: $text-white;
+  cursor: pointer;
+  font-size: $font-size-medium;
+  height: 80px;
+  outline : none;
+  position: relative;
+  text-align: center;
+  width: 80px;
+
+  &--action {
+    background: $calculator-action-button;
+
+    &:hover {
+      @include lighten( $calculator-action-button )
+    }
+
+    &:active {
+      @include darken( $calculator-action-button )
+    }
+  }
+}

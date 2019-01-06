@@ -23,5 +23,8 @@ storiesOf('Molecules - VCalculatorActions', module)
         ]
       }
     },
+    propsDescription: {
+      buttonList: 'Molecule used to create the Actions button by default AC, SAVE',
+    },
     template: '<VCalculatorActions :buttonList="buttonList"/>'
   }))

@@ -6,7 +6,19 @@ export default {
   },
   props: {
     buttonList: {
-      required: true,
+      default: [
+        {
+          classModifier: 'action',
+          text: 'AC',
+          value: 'ac',
+        },
+        {
+          classModifier: 'action-larger',
+          text: 'SAVE',
+          value: 'save',
+        }
+      ],
+      required: false,
       type: Array
     }
   },

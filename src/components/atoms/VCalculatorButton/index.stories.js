@@ -12,44 +12,44 @@ storiesOf('Atoms - VCalculatorButton', module)
   .add('action', () => ({
     components: { VCalculatorButton },
     methods: { onClick },
-    template: '<VCalculatorButton dataAction="action" classModifier="action" value="ac" text="AC" :onClick="onClick" />',
     propsDescription: {
       classModifier: 'BEM functinality to to set the class modifier',
       onClick: 'Add js functionality',
       value: 'Value of the button',
       text: 'Representation of button value'
-    }
+    },
+    template: '<VCalculatorButton dataAction="action" classModifier="action" value="ac" text="AC" :onClick="onClick" />'
   }))
   .add('action larger', () => ({
     components: { VCalculatorButton },
     methods: { onClick },
-    template: '<VCalculatorButton dataAction="action" classModifier="action-larger" value="save" text="SAVE" :onClick="onClick"/>',
     propsDescription: {
       classModifier: 'BEM functinality to to set the class modifier',
       value: 'Value of the button',
       onClick: 'Add js functionality',
       text: 'Representation of button value'
-    }
+    },
+    template: '<VCalculatorButton dataAction="action" classModifier="action-larger" value="save" text="SAVE" :onClick="onClick"/>'
   }))
   .add('operand', () => ({
     components: { VCalculatorButton },
     methods: { onClick },
-    template: '<VCalculatorButton dataAction="operand" classModifier="operand" value="1" text="1" :onClick="onClick"/>',
     propsDescription: {
       classModifier: 'BEM functinality to to set the class modifier',
       value: 'Value of the button',
       onClick: 'Add js functionality',
       text: 'Representation of button value'
-    }
+    },
+    template: '<VCalculatorButton dataAction="operand" classModifier="operand" value="1" text="1" :onClick="onClick"/>'
   }))
   .add('operation', () => ({
     components: { VCalculatorButton },
     methods: { onClick },
-    template: '<VCalculatorButton dataAction="operation" classModifier="operation" value="+" text="+" :onClick="onClick"/>',
     propsDescription: {
       classModifier: 'BEM functinality to to set the class modifier',
       value: 'Value of the button',
       onClick: 'Add js functionality',
       text: 'Representation of button value'
-    }
+    },
+    template: '<VCalculatorButton dataAction="operation" classModifier="operation" value="+" text="+" :onClick="onClick"/>'
   }))

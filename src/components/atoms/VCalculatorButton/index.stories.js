@@ -1,46 +1,55 @@
 import { storiesOf } from '@storybook/vue'
+import { action } from '@storybook/addon-actions';
 import VueInfoAddon from 'storybook-addon-vue-info'
 import VCalculatorButton from '.'
+
+const onClick = (e) => (
+  action('value')(e.currentTarget.value)
+)
 
 storiesOf('Atoms - VCalculatorButton', module)
   .addDecorator(VueInfoAddon)
   .add('action', () => ({
     components: { VCalculatorButton },
-    template: '<VCalculatorButton dataAction="action" classModifier="action" value="ac" text="AC"/>',
+    methods: { onClick },
+    template: '<VCalculatorButton dataAction="action" classModifier="action" value="ac" text="AC" :onClick="onClick" />',
     propsDescription: {
-      dataAction: 'Dispatch event to the store',
       classModifier: 'BEM functinality to to set the class modifier',
+      onClick: 'Add js functionality',
       value: 'Value of the button',
       text: 'Representation of button value'
     }
   }))
   .add('action larger', () => ({
     components: { VCalculatorButton },
-    template: '<VCalculatorButton dataAction="action" classModifier="action-larger" value="save" text="SAVE"/>',
+    methods: { onClick },
+    template: '<VCalculatorButton dataAction="action" classModifier="action-larger" value="save" text="SAVE" :onClick="onClick"/>',
     propsDescription: {
-      dataAction: 'Dispatch event to the store',
       classModifier: 'BEM functinality to to set the class modifier',
       value: 'Value of the button',
+      onClick: 'Add js functionality',
       text: 'Representation of button value'
     }
   }))
   .add('operand', () => ({
     components: { VCalculatorButton },
-    template: '<VCalculatorButton dataAction="operand" classModifier="operand" value="1" text="1"/>',
+    methods: { onClick },
+    template: '<VCalculatorButton dataAction="operand" classModifier="operand" value="1" text="1" :onClick="onClick"/>',
     propsDescription: {
-      dataAction: 'Dispatch event to the store',
       classModifier: 'BEM functinality to to set the class modifier',
       value: 'Value of the button',
+      onClick: 'Add js functionality',
       text: 'Representation of button value'
     }
   }))
   .add('operation', () => ({
     components: { VCalculatorButton },
-    template: '<VCalculatorButton dataAction="operation" classModifier="operation" value="+" text="+"/>',
+    methods: { onClick },
+    template: '<VCalculatorButton dataAction="operation" classModifier="operation" value="+" text="+" :onClick="onClick"/>',
     propsDescription: {
-      dataAction: 'Dispatch event to the store',
       classModifier: 'BEM functinality to to set the class modifier',
       value: 'Value of the button',
+      onClick: 'Add js functionality',
       text: 'Representation of button value'
     }
   }))

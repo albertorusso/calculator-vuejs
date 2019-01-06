@@ -1,25 +1,20 @@
 export default {
   props: {
-    buttonAction: {
-      required: false,
-      type: String
-    },
     classModifier: {
       required: false,
       type: String
+    },
+    onClick: {
+      required: true,
+      type: Function
     },
     text: {
       required: true,
       type: String
     },
     value: {
-      required: true,
+      required: false,
       type: String
-    },
-  },
-  methods: {
-    clickButton(event){
-        console.log('TODO: dispatch click event', event)
     }
   }
 }

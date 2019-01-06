@@ -3,9 +3,9 @@
   <button
     class="v-calculator-button"
     :class="[ classModifier ? 'v-calculator-button--' + classModifier : '' ]"
-    :data-action="buttonAction"
     :value="value"
-    @click="clickButton">
+    @click='onClick'
+  >
     <span v-html="text"></span>
   </button>
 </template>

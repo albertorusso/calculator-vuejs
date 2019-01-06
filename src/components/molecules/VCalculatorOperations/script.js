@@ -6,33 +6,33 @@ export default {
   },
   props: {
     buttonList: {
-      default: [
+      default: () => ([
         {
-          classModifier: 'operator',
+          classModifier: 'operation',
           text: '&divide',
           value: '/',
         },
         {
-          classModifier: 'operator',
+          classModifier: 'operation',
           text: 'x',
           value: '*',
         },
         {
-          classModifier: 'operator',
+          classModifier: 'operation',
           text: '-',
           value: '-',
         },
         {
-          classModifier: 'operator',
+          classModifier: 'operation',
           text: '+',
           value: '+',
         },
         {
-          classModifier: 'operator',
+          classModifier: 'operation',
           text: '=',
           value: '=',
         }
-      ],
+      ]),
       required: false,
       type: Array
     }

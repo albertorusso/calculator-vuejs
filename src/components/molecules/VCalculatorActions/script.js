@@ -6,7 +6,7 @@ export default {
   },
   props: {
     buttonList: {
-      default: [
+      default: () => ([
         {
           classModifier: 'action',
           text: 'AC',
@@ -17,7 +17,7 @@ export default {
           text: 'SAVE',
           value: 'save',
         }
-      ],
+      ]),
       required: false,
       type: Array
     }

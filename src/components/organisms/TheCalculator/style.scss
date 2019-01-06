@@ -1,0 +1,27 @@
+@import '../../../global-styles/settings';
+
+$calculatorWidth: 320px; // TODO: global variable
+
+.the-calculator {
+
+  max-width: $calculatorWidth;
+
+  &__keyboard {
+    display: flex;
+  }
+
+  &__row:not(:last-child) {
+    border-style: solid;
+    border-color: $border-dark-grey;
+    border-width: 0 0 1px 0;
+  }
+
+  &__main-keyboard {
+    flex-grow: 3;
+  }
+
+  &__operations-keyboard {
+    flex-grow: 1;
+  }
+
+}

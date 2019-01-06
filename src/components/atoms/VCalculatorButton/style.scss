@@ -28,6 +28,18 @@
   }
 
   &--operand {
+    background: $calculator-operand-button;
+
+    &:hover {
+      @include lighten( $calculator-operand-button )
+    }
+
+    &:active {
+      @include darken( $calculator-operand-button )
+    }
+  }
+
+  &--operation {
     background: $calculator-operation-button;
 
     &:hover {
@@ -37,6 +49,7 @@
     &:active {
       @include darken( $calculator-operation-button )
     }
+
   }
 
   &--action-larger {

@@ -24,3 +24,13 @@ storiesOf('Atoms - VCalculatorButton', module)
       text: 'Representation of button value'
     }
   }))
+  .add('operand', () => ({
+    components: { VCalculatorButton },
+    template: '<VCalculatorButton dataAction="operand" classModifier="operand" value="1" text="1"/>',
+    propsDescription: {
+      dataAction: 'Dispatch event to the store',
+      classModifier: 'BEM functinality to to set the class modifier',
+      value: 'Value of the button',
+      text: 'Representation of button value'
+    }
+  }))

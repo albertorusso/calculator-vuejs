@@ -27,6 +27,18 @@
     }
   }
 
+  &--operand {
+    background: $calculator-operation-button;
+
+    &:hover {
+      @include lighten( $calculator-operation-button )
+    }
+
+    &:active {
+      @include darken( $calculator-operation-button )
+    }
+  }
+
   &--action-larger {
     width: 160px;
   }

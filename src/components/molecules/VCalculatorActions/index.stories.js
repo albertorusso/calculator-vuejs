@@ -1,5 +1,4 @@
-import { storiesOf } from '@storybook/vue'
-import { action } from '@storybook/addon-actions';
+import { storiesOf } from '@storybook/vue';
 import VueInfoAddon from 'storybook-addon-vue-info'
 import VCalculatorActions from '.'
 
@@ -24,7 +23,7 @@ storiesOf('Molecules - VCalculatorActions', module)
       }
     },
     propsDescription: {
-      buttonList: 'Molecule used to create the Actions button by default AC, SAVE',
+      buttonList: 'Molecule used to create action buttons by default AC, SAVE',
     },
     template: '<VCalculatorActions :buttonList="buttonList"/>'
   }))

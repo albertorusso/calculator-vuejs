@@ -1,7 +1,6 @@
 export default {
   props: {
     buttonAction: {
-      default: 'no-action',
       required: false,
       type: String
     },

@@ -14,7 +14,8 @@
   text-align: center;
   width: 80px;
 
-  &--action {
+  &--action,
+  &--action-larger {
     background: $calculator-action-button;
 
     &:hover {
@@ -24,5 +25,9 @@
     &:active {
       @include darken( $calculator-action-button )
     }
+  }
+
+  &--action-larger {
+    width: 160px;
   }
 }

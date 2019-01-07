@@ -46,7 +46,12 @@ export default {
   },
   methods: {
     onClick(event) {
-      console.log('TODO: dispatch event to store', event.currentTarget.value)
+      const currentTarget = event.currentTarget
+      const value = currentTarget.value
+
+      if(this.$store){
+        return this.$store.dispatch('addOperation', {value: value})
+      }
     }
   }
 }

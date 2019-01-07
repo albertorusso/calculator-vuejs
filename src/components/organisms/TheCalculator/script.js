@@ -13,12 +13,20 @@ export default {
   computed: {
     getOperationSummary(){
       let summary = ''
-      // TODO: implement store
+
+      if(this.$store){
+        summary = this.$store.state.display.operationSummary
+      }
+
       return summary
     },
     getOperation(){
       let operation = '0'
-      // TODO: implement store
+
+      if(this.$store){
+        operation = this.$store.state.display.operation
+      }
+
       return operation
     }
   },

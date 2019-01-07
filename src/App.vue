@@ -5,13 +5,15 @@
 </template>
 
 <script>
+import store from './storeModules/calculator-store.js'
 import VPageCalculator from './components/pages/VPageCalculator'
 
 export default {
-  name: 'app',
   components: {
     VPageCalculator
-  }
+  },
+  name: 'app',
+  store: store,
 }
 </script>
 

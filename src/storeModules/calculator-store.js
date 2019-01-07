@@ -5,6 +5,10 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+/**
+ * Default state of the store
+ * @type {Object}
+ */
 const state = {
   currentValue: 0,
   expression: '',
@@ -14,8 +18,12 @@ const state = {
   }
 }
 
+/**
+ * Methods to mutate (update) the state of the store
+ * @type {Object}
+ */
 const mutations = {
-  clearCalculator(state, value) {
+  clearCalculator(state) {
     state.currentValue = '',
     state.expression = ''
     state.display.expressionSummary = ''
@@ -33,7 +41,8 @@ const mutations = {
         state.expression += newValue
       }
 
-      state.display.expression = String(state.expression)
+      state.display.expression = calculator.commaFormat(state.expression)
+
     }
 
   },
@@ -49,19 +58,20 @@ const mutations = {
         state.expression += newValue
       }
 
-      state.display.expression = String(state.expression)
+      state.display.expression = calculator.commaFormat(state.expression)
     }
 
   },
-  evalOperation(state, value) {
+  evalOperation(state) {
     try {
       const result = String(math.eval(state.expression))
 
       if(isNaN(result)){
         state.display.expressionSummary = 'ERROR'
       } else {
+        state.expression = result
         state.display.expressionSummary = state.display.expression + '='
-        state.display.expression = String(math.eval(state.expression))
+        state.display.expression = calculator.commaFormat(result)
       }
     } catch {
       state.display.expressionSummary = 'ERROR'
@@ -69,6 +79,10 @@ const mutations = {
   }
 }
 
+/**
+ * Available actions to dispatch by components
+ * @type {Object}
+ */
 const actions = {
   actionFunctionality: ({ commit }, payload) => {
     const value = payload.value

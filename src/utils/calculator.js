@@ -1,17 +1,8 @@
-const updateOperand = (currentValue, value) => {
-  let res = ''
-
-  if (currentValue === 0 && value === '0') {
-    res = ''
-  } if (currentValue === '-' && value === '0'){
-    res = value
-  } else if(isNaN(currentValue + value) === false){
-    res = value
-  }
-
-  return res
-}
-
+/**
+ * Add + - * / to the math expression
+ * @param {String} operation Operations allowed +, -, *, /
+ * @param {String} value     Updated expression
+ */
 const addOperation = (operation, value) => {
     let res = ''
     let lastDigit = operation.substr(-1)
@@ -22,11 +13,56 @@ const addOperation = (operation, value) => {
       res = value
     }
 
-    return res
+    return String(res)
 
 }
 
+/**
+ * Change the number format allowing comma e.g.: 1,000.23
+ * @param  {String} value math expression
+ * @return {String}       return update expression
+ */
+const commaFormat = (value) => {
+
+  const arrayExpression = value.split(/(\+|-|\/|\*)/g)
+
+  const res = arrayExpression.map(value => {
+    const parts = value.split(".");
+
+    if(isNaN(parts[0])){
+      return value
+    } else if(parts[0] !== ''){
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
+    }
+
+  })
+
+  return String(res.join(''))
+}
+
+/**
+ * update current operand if it is a valid number
+ * @param  {String} currentValue math expression
+ * @param  {String} value        value between 0 to 9 or .
+ * @return {String}              updated operand
+ */
+const updateOperand = (currentValue, value) => {
+  let res = ''
+
+  if (currentValue === 0 && value === '0') {
+    res = ''
+  } if (currentValue === '-' && value === '0'){
+    res = value
+  } else if(isNaN(currentValue + value) === false && String(currentValue).indexOf(',') < 0){
+    res = value
+  }
+
+  return res
+}
+
 export default {
-  updateOperand: updateOperand,
-  addOperation: addOperation
+  addOperation: addOperation,
+  commaFormat: commaFormat,
+  updateOperand: updateOperand
 }

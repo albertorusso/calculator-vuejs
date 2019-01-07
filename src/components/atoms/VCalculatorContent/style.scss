@@ -1,0 +1,11 @@
+@import '../../../global-styles/settings';
+
+.v-calculator-content {
+  color: $calculator-text-result;
+  font-size: $font-size-xxlarge;
+
+  &--header {
+    color: $calculator-text-operation;
+    font-size: $font-size-large;
+  }
+}

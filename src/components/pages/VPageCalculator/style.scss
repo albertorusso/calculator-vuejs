@@ -1,4 +1,15 @@
-.calculator {
-  display: inline-block;
-  margin: 40px auto;
+@import '../../../global-styles/settings';
+
+.page {
+
+    &__welcome-message {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    &__the-calculator {
+      margin: 40px auto;
+      width: $calculator-width;
+    }
+
 }

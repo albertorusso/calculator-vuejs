@@ -1,10 +1,10 @@
 <script src="./script.js"></script>
 <template>
-  <div>
-    <div class="hello">
+  <div class="page">
+    <div class="page__welcome-message">
       <h1>{{ msg }}</h1>
     </div>
-    <div class="calculator">
+    <div class="page__the-calculator">
       <TheCalculator />
     </div>
   </div>

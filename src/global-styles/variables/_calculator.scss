@@ -1,0 +1,12 @@
+// Set calculator dimension
+$calculator-width: 320px;
+$calculator-max-column: 4;
+
+// Derivate button values
+$calculator-button-width: ($calculator-width / $calculator-max-column);
+$calculator-button-width-large: ($calculator-button-width * 2);
+$calculator-button-height: $calculator-button-width;
+
+// Derivate layout structure
+$calculator-main-keyboard-width: $calculator-button-width * 3;
+$calculator-operations-keyboard-width: $calculator-button-width;

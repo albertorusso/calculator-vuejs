@@ -1,8 +1,8 @@
 <script src="./script.js"></script>
 <template>
-  <div>
+  <div class="v-calculator-operands">
     <div
-      class="v-calculator-operands"
+      class="v-calculator-operands__button-container"
       v-for="(n, nIndex) in 4"
       :key="nIndex"
     >

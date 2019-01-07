@@ -1,4 +1,11 @@
-.v-calculator-actions {
+@import '../../../global-styles/settings';
+
+.v-calculator-operands {
   display: flex;
-  width: 240px;
+  flex-direction: column;
+  width: $calculator-main-keyboard-width;
+
+  &__button-container:not(:last-child) {
+    border-bottom: 1px solid $border-dark-grey;
+  }
 }

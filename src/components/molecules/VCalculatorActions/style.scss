@@ -1,4 +1,7 @@
+@import '../../../global-styles/settings';
+
 .v-calculator-actions {
+  border-bottom: 1px solid $border-dark-grey;
   display: flex;
-  width: 240px;
+  width: $calculator-main-keyboard-width;
 }

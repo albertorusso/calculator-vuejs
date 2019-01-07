@@ -1,8 +1,8 @@
 <script src="./script.js"></script>
 <template>
-  <div>
+  <div class="v-calculator-operations">
     <div
-      class="v-calculator-operators"
+      class="v-calculator-operations__button-container"
       v-for="(button, index) in keyborad.operatorButtons"
       :key="index">
         <VCalculatorButton

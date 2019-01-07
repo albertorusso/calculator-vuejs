@@ -10,6 +10,7 @@ export default {
       type: String
     },
     operation: {
+      default: () => (0),
       required: true,
       type: String
     }

@@ -10,6 +10,7 @@
     "serve:storybook": "vue-cli-service serve:storybook -p 8001 -c private/storybook"
   },
   "dependencies": {
+    "math-expression-evaluator": "^1.2.17",
     "vue": "^2.5.21"
   },
   "devDependencies": {

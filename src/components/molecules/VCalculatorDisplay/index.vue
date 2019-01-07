@@ -2,11 +2,11 @@
 <template>
   <div class="v-calculator-display">
     <div class="v-calculator-display__header">
-      <VCalculatorContent classModifier="header" :text="operationSummary"/>
+      <VCalculatorContent classModifier="header" :text="expressionSummary"/>
     </div>
     <div class="v-calculator-display__result">
       <VCalculatorContent
-        :text="operation"
+        :text="expression"
       />
     </div>
   </div>

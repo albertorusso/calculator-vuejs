@@ -2,7 +2,7 @@
 <template>
   <div class="the-calculator">
     <div class="the-calculator__display">
-      <VCalculatorDisplay :operationSummary="getOperationSummary" :operation="getOperation"/>
+      <VCalculatorDisplay :expressionSummary="getExpressionSummary" :expression="getExpression"/>
     </div>
     <div class="the-calculator__keyboard">
       <div class="the-calculator__main-keyboard">

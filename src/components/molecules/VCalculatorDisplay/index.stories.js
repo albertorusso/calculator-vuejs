@@ -10,8 +10,8 @@ storiesOf('Molecules - VCalculatorDisplay', module)
       tasks: 'defaultTaskList',
     }),
     propsDescription: {
-      operationSummary: 'Show the operation summary after the evaluation button has been clicked',
-      operation: 'Show the current operation or the result'
+      expressionSummary: 'Show the operation summary after the evaluation button has been clicked',
+      expression: 'Show the current operation or the result'
     },
-    template: '<VCalculatorDisplay operationSummary="365 x 4 =" operation="1,460"/>'
+    template: '<VCalculatorDisplay expressionSummary="365 x 4 =" expression="1,460"/>'
   }))

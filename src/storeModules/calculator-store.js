@@ -1,28 +1,71 @@
+import math from'math-expression-evaluator'
+import calculator from '../utils/calculator.js'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
 const state = {
+  currentValue: 0,
+  expression: '',
   display: {
-    operationSummary: '365 x 4 =',
-    operation: '1,460'
+    expressionSummary: '',
+    expression: '0'
   }
 }
 
 const mutations = {
   clearCalculator(state, value) {
-    state.display.operationSummary = ''
-    state.display.operation = '0'
+    state.currentValue = '',
+    state.expression = ''
+    state.display.expressionSummary = ''
+    state.display.expression = '0'
   },
   updateCurrentOperand(state, value) {
-    console.log('in update operand', value)
+    const newValue = calculator.updateOperand(state.currentValue, value)
+
+    if(newValue){
+      state.currentValue += newValue
+
+      if(state.expression === '0'){
+        state.expression = newValue === '.' ? '0.' : newValue
+      } else {
+        state.expression += newValue
+      }
+
+      state.display.expression = String(state.expression)
+    }
+
   },
   addOperation(state, value) {
-    console.log('in add operation', value)
+    const newValue = calculator.addOperation(state.expression, value)
+
+    if(newValue){
+      state.currentValue = 0
+
+      if(state.expression === '0' && newValue === '-'){
+        state.expression = newValue
+      } else {
+        state.expression += newValue
+      }
+
+      state.display.expression = String(state.expression)
+    }
+
   },
   evalOperation(state, value) {
-    console.log('in eval', value)
+    try {
+      const result = String(math.eval(state.expression))
+
+      if(isNaN(result)){
+        state.display.expressionSummary = 'ERROR'
+      } else {
+        state.display.expressionSummary = state.display.expression + '='
+        state.display.expression = String(math.eval(state.expression))
+      }
+    } catch {
+      state.display.expressionSummary = 'ERROR'
+    }
   }
 }
 
@@ -43,7 +86,7 @@ const actions = {
     const value = payload.value
 
     if(value === '='){
-      return commit('evalOperation', payload.value)
+      return commit('evalOperation')
     } else {
       return commit('addOperation', payload.value)
     }

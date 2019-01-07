@@ -11,20 +11,20 @@ export default {
     VCalculatorOperations
   },
   computed: {
-    getOperationSummary(){
+    getExpressionSummary(){
       let summary = ''
 
       if(this.$store){
-        summary = this.$store.state.display.operationSummary
+        summary = this.$store.state.display.expressionSummary
       }
 
       return summary
     },
-    getOperation(){
+    getExpression(){
       let operation = '0'
 
       if(this.$store){
-        operation = this.$store.state.display.operation
+        operation = this.$store.state.display.expression
       }
 
       return operation

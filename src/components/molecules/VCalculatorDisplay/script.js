@@ -5,11 +5,11 @@ export default {
     VCalculatorContent
   },
   props: {
-    operationSummary: {
+    expressionSummary: {
       required: true,
       type: String
     },
-    operation: {
+    expression: {
       default: () => (0),
       required: true,
       type: String

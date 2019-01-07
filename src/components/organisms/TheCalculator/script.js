@@ -1,12 +1,26 @@
+import VCalculatorDisplay from '../../molecules/VCalculatorDisplay'
 import VCalculatorActions from '../../molecules/VCalculatorActions'
 import VCalculatorOperands from '../../molecules/VCalculatorOperands'
 import VCalculatorOperations from '../../molecules/VCalculatorOperations'
 
 export default {
   components: {
+    VCalculatorDisplay,
     VCalculatorActions,
     VCalculatorOperands,
     VCalculatorOperations
+  },
+  computed: {
+    getOperationSummary(){
+      let summary = ''
+      // TODO: implement store
+      return summary
+    },
+    getOperation(){
+      let operation = '0'
+      // TODO: implement store
+      return operation
+    }
   },
   data() {
     return {

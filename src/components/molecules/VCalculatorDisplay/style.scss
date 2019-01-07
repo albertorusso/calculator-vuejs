@@ -1,0 +1,15 @@
+@import '../../../global-styles/settings';
+
+.v-calculator-display {
+  background: $calculator-display-result;
+  padding: 42px 30px 44px;
+  text-align: right;
+  width: ($calculator-width - 60px);
+
+  &__header {
+    min-height: 42px;
+  }
+  &__result {
+    min-height: 82px;
+  }
+}

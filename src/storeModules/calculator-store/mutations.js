@@ -1,28 +1,11 @@
 import math from'math-expression-evaluator'
-import calculator from '../utils/calculator.js'
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
-
-/**
- * Default state of the store
- * @type {Object}
- */
-const state = {
-  currentValue: '0',
-  expression: '0',
-  display: {
-    expressionSummary: '',
-    expression: '0'
-  }
-}
+import calculator from '../../utils/calculator'
 
 /**
  * Methods to mutate (update) the state of the store
  * @type {Object}
  */
-const mutations = {
+export default {
   clearCalculator(state) {
     state.currentValue = '0',
     state.expression = '0'
@@ -79,37 +62,3 @@ const mutations = {
     }
   }
 }
-
-/**
- * Available actions to dispatch by components
- * @type {Object}
- */
-const actions = {
-  actionFunctionality: ({ commit }, payload) => {
-    const value = payload.value
-
-    if (value === 'ac'){
-      return commit('clearCalculator')
-    } else  if(value === 'save'){
-      alert('TODO: save value')
-    }
-  },
-  updateCurrentOperand: ({ commit }, payload) => {
-    return commit('updateCurrentOperand', payload.value)
-  },
-  addOperation: ({ commit }, payload) => {
-    const value = payload.value
-
-    if(value === '='){
-      return commit('evalOperation')
-    } else {
-      return commit('addOperation', payload.value)
-    }
-  }
-}
-
-export default new Vuex.Store({
-  actions,
-  mutations,
-  state
-})

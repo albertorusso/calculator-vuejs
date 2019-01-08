@@ -32,8 +32,6 @@ const commaFormat = (value) => {
 
     if(isNaN(parts[0])){
 
-      console.log('is not a number')
-
       switch (parts[0]) {
         case '/':
           operation = '&divide;'

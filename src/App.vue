@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import store from './storeModules/calculator-store.js'
+import store from './storeModules/calculator-store/store'
 import VPageCalculator from './components/pages/VPageCalculator'
 
 export default {

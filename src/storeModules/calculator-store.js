@@ -10,7 +10,7 @@ Vue.use(Vuex)
  * @type {Object}
  */
 const state = {
-  currentValue: 0,
+  currentValue: '0',
   expression: '0',
   display: {
     expressionSummary: '',
@@ -24,7 +24,7 @@ const state = {
  */
 const mutations = {
   clearCalculator(state) {
-    state.currentValue = '',
+    state.currentValue = '0',
     state.expression = '0'
     state.display.expressionSummary = ''
     state.display.expression = '0'
@@ -50,10 +50,11 @@ const mutations = {
     const newValue = calculator.addOperation(state.expression, value)
 
     if(newValue){
-      state.currentValue = 0
+      state.currentValue = ''
 
       if(state.expression === '0' && newValue === '-'){
         state.expression = newValue
+        state.currentValue = newValue
       } else {
         state.expression += newValue
       }

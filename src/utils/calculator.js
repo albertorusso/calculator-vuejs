@@ -32,6 +32,8 @@ const commaFormat = (value) => {
 
     if(isNaN(parts[0])){
 
+      console.log('is not a number')
+
       switch (parts[0]) {
         case '/':
           operation = '&divide;'
@@ -45,7 +47,7 @@ const commaFormat = (value) => {
 
       return operation
 
-    } else if(parts[0] !== ''){
+    } else {
       parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return parts.join(".");
     }
@@ -64,9 +66,11 @@ const commaFormat = (value) => {
 const updateOperand = (currentValue, value) => {
   let res = ''
 
-  if (currentValue === 0 && value === '0') {
+  if (currentValue === '0' && value === '.'){
+    res = value
+  } else if (currentValue + value === '00' || currentValue + value === '-00') {
     res = ''
-  } if (currentValue === '-' && value === '0'){
+  } else if (currentValue === '-' && value === '0'){
     res = value
   } else if(isNaN(currentValue + value) === false && String(currentValue).indexOf(',') < 0){
     res = value

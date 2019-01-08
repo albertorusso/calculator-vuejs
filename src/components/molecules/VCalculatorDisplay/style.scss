@@ -6,10 +6,16 @@
   text-align: right;
   width: ($calculator-width - 60px);
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   &__header {
     min-height: 42px;
+    overflow-x: scroll;
   }
   &__result {
     min-height: 82px;
+    overflow-x: scroll;
   }
 }

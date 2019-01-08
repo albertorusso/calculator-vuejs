@@ -3,7 +3,7 @@
   <div
   class="v-calculator-content"
   :class="[ classModifier ? 'v-calculator-content--' + classModifier : '' ]">
-    {{text}}
+    <span v-html="text"></span>
   </div>
 </template>
 <style src="./style.scss" lang="scss"></style>

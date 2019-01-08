@@ -11,7 +11,7 @@ Vue.use(Vuex)
  */
 const state = {
   currentValue: 0,
-  expression: '',
+  expression: '0',
   display: {
     expressionSummary: '',
     expression: '0'
@@ -25,7 +25,7 @@ const state = {
 const mutations = {
   clearCalculator(state) {
     state.currentValue = '',
-    state.expression = ''
+    state.expression = '0'
     state.display.expressionSummary = ''
     state.display.expression = '0'
   },

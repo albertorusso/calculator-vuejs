@@ -28,9 +28,23 @@ const commaFormat = (value) => {
 
   const res = arrayExpression.map(value => {
     const parts = value.split(".");
+    let operation = ''
 
     if(isNaN(parts[0])){
-      return value
+
+      switch (parts[0]) {
+        case '/':
+          operation = '&divide;'
+          break
+        case '*':
+          operation = 'x'
+          break
+        default:
+          operation = parts[0]
+      }
+
+      return operation
+
     } else if(parts[0] !== ''){
       parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       return parts.join(".");

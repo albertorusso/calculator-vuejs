@@ -3,5 +3,5 @@
 }
 
 @mixin darken($base-color){
-  background: darken( $base-color, 20% )
+  background: darken( $base-color, 10% )
 }

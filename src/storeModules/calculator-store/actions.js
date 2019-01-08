@@ -9,7 +9,7 @@ export default {
     if (value === 'ac'){
       return commit('clearCalculator')
     } else  if(value === 'save'){
-      alert('TODO: save value')
+      return commit('saveExpression')
     }
   },
   updateCurrentOperand: ({ commit }, payload) => {

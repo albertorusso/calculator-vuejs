@@ -1,5 +1,6 @@
 import math from'math-expression-evaluator'
 import calculator from '../../utils/calculator'
+import axios from 'axios'
 
 /**
  * Methods to mutate (update) the state of the store
@@ -60,5 +61,25 @@ export default {
     } catch {
       state.display.expressionSummary = 'ERROR'
     }
+  },
+  saveExpression(state) {
+    const expressionSummary = state.display.expressionSummary
+    const expression = state.display.expression
+
+    axios({
+      method: 'post',
+      url: 'http://localhost:8083/save-calculation',
+      data: {
+        expressionSummary: expressionSummary,
+        expression: expression
+      }
+    })
+    .then(function (response) {
+      state.display.expressionSummary = response.data.message
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   }
 }

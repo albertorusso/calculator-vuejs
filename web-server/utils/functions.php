@@ -47,19 +47,22 @@
   }
 
   function getCalculationsReverse(){
-    $filename = 'save-calculation/file2.csv';
-    $csv = explode("\n", file_get_contents($filename));
-    $csvRevert = array_reverse($csv);
+    $filename = 'save-calculation/file.csv';
     $tableBodyContent = '';
+    if(file_exists($filename)){
+      $csv = explode("\n", file_get_contents($filename));
+      $csvRevert = array_reverse($csv);
 
-    foreach ($csvRevert as $key => $line){
-    	$csv[$key] = str_getcsv($line);
-      if($csv[$key][0] != ''){
-        $tableBodyContent .= "<tr>";
-          foreach ($csv[$key] as $j => $item){
-            $tableBodyContent .= '<td>'.$item.'</td>';
-          }
-        $tableBodyContent .= "</tr>";
+
+      foreach ($csvRevert as $key => $line){
+      	$csv[$key] = str_getcsv($line);
+        if($csv[$key][0] != ''){
+          $tableBodyContent .= "<tr>";
+            foreach ($csv[$key] as $j => $item){
+              $tableBodyContent .= '<td>'.$item.'</td>';
+            }
+          $tableBodyContent .= "</tr>";
+        }
       }
     }
 

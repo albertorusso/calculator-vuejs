@@ -79,7 +79,7 @@ export default {
       state.display.expressionSummary = response.data.message
     })
     .catch(function (error) {
-      return
+      return error
     });
 
   }

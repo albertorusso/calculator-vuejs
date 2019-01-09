@@ -7,15 +7,18 @@
   width: ($calculator-width - 60px);
 
   ::-webkit-scrollbar {
+    background: transparent;
     display: none;
   }
 
   &__header {
     min-height: 42px;
     overflow-x: scroll;
+    scrollbar-color: transparent transparent;
   }
   &__result {
     min-height: 82px;
     overflow-x: scroll;
+    scrollbar-color: transparent transparent;
   }
 }

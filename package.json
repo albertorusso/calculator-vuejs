@@ -11,9 +11,14 @@
     "serve:web-server": "node web-server/server"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "exec-php": "0.0.4",
     "math-expression-evaluator": "^1.2.17",
-    "vue": "^2.5.21"
+    "vue": "^2.5.21",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.20",

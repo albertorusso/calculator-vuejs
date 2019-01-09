@@ -4,10 +4,10 @@
 
 1. Build a Calculator written in valid HTML 5, CSS and Javascript.
 
-2. Build PHP functionalities to store all calculator results and to display into a table filter by newest to oldest.
+2. Build PHP functionalities to store all calculator results and display into a table filter by newest to oldest.
 
 ## Front end requirements
-* `HTML` frame of the widget as valid HTML5 using CSS flexbox.
+* `HTML` valid HTML5 using CSS flexbox.
 * `CSS/SASS` implement the mock-up solution in SASS.
 * `Javascript/jQuery`
   * Number functionality.
@@ -17,7 +17,7 @@
 
 ## Server side requirements
 * `PHP`
-  * When the user clicks the save button on the calculator, the sum will be stored in a
+  * When the user clicks the save button, the sum will be stored in a
 CSV file, along with the user&#39;s IP Address, date it was added and the browser used.
   * Create a new page called &quot;Calculations.php&quot;, convert the CSV file into an array, and output all the info into a table. Should be filtered by newsest to oldest.
 
@@ -40,13 +40,12 @@ Web server is available on http://localhost:8083/
 All calculation stored are available on http://localhost:8083/calculations
 ```
 
-**NOTE:** I built a web server in Node.js to consume PHP and make testing easier. However to preserve the original php functionalities I am not passing the `response.Header` to PHP, so **getenv('HTTP_CLIENT_IP')** and **$_SERVER['HTTP_USER_AGENT']** return unknown and not available response, also please make sure you have the right Permission to access/write on `file.csv`.
+**Important Note:** I built a web server in Node.js to consume PHP and make testing easier. However I built the Node.js server just execute `php functions` without exposing HTTP headers. For this reason **getenv('HTTP_CLIENT_IP')** and **$_SERVER['HTTP_USER_AGENT']** return unknown and not available response. If you use this approach to test the server, please make sure you have right permission to write on `file.csv`. To solve it you can try to run ```sudo yarn run serve:web-server``` or access as administrator.
 
-## How to test all Calculator functionalies?
-If you want to test also **HTTP_CLIENT_IP** and **HTTP_USER_AGENT** I recommend to move `web-server/calculator.php`, `web-server/save-calculator.php` and `web-server/utils` folder into an Apache server with PHP and start it.
+## How to test Calculator save functionality?
+Please move `web-server/calculator.php`, `web-server/save-calculator.php` files and `web-server/utils` folder into an Apache server *e.g. XAMPP*  and start it.
 
-Calculator has also a configuration file inside `src/config.js` where it is possible to setup the API call to the right path.
-
+**Note:** Calculator consume a configuration file `src/config.js` where it is possibile to configure the API to save user expressions.
 
 ## Technologies involved / approach
 * Webpack: module bundler.
@@ -89,6 +88,16 @@ All relevant project files are inside ```/src```, ```/utils``` and ```/web-serve
 - ```/utils``` contains js files.
 
 - ```/web-server``` contains ```server.js``` a simple node server solution to run PHP requests, ```calculator.php```, ```save-calculator.php``` and  ```utils/functions.php``` to execute all functionalies required.
+
+## Browser support
+- Built on Chrome version 71.0.3578.98
+- Tested on Firefox 64.0
+- Tested on Safari version 9.1.2
+
+## Project Goal
+I decided to implement the front end solution in Vue.js, because the company is focused on this technology and because I always have been interesting in Vue.js.
+
+Atomic methodology helps to simplify and structure and Storybook allows you to run and view your Vue components in isolated manner providing a great visual documentation for developers and designers.
 
 ## Time spent to complete the test
 5 days working between 3 to 6 hours per day.

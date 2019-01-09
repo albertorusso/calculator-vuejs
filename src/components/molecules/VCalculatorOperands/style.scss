@@ -5,7 +5,11 @@
   flex-direction: column;
   width: $calculator-main-keyboard-width;
 
-  &__button-container:not(:last-child) {
+  &__button-row:not(:last-child) {
     border-bottom: 1px solid $border-dark-grey;
+  }
+
+  &__button-container {
+    display: inline-block;
   }
 }

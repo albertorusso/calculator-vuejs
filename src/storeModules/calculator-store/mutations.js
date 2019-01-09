@@ -66,6 +66,7 @@ export default {
     const expressionSummary = state.display.expressionSummary
     const expression = state.display.expression
 
+    if(expressionSummary.indexOf('=') > 0 && expressionSummary !== 'SAVED')
     axios({
       method: 'post',
       url: 'http://localhost:8083/save-calculation',
@@ -78,7 +79,7 @@ export default {
       state.display.expressionSummary = response.data.message
     })
     .catch(function (error) {
-      console.log(error);
+      return
     });
 
   }

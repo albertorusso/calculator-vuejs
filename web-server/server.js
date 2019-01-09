@@ -16,10 +16,10 @@ app.get('/', function(request, response) {
   response.end();
 });
 
-app.get('/calculations', function(request, response) {
-  response.writeHeader(200, {"Content-Type": "text/html;charset=utf-8"});
+app.get('/calculations', function(request, response, next) {
+  response.setHeader('Content-Type', 'text/html;charset=utf-8');
   execPhp('web-server/calculations.php', function(error, php, outprint){
-    response.write(outprint);
+    response.send(outprint);
     response.end();
   });
 });

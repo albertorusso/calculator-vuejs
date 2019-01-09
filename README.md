@@ -95,9 +95,9 @@ All relevant project files are inside ```/src```, ```/utils``` and ```/web-serve
 - Tested on Safari version 9.1.2
 
 ## Project Goal
-I decided to implement the front end solution in Vue.js, because the company is focused on this technology and because I always have been interesting in Vue.js.
+I decided to implement the front end solution in Vue.js, because the company is focused on this technology and because I always have been interested in Vue.js.
 
-Atomic methodology helps to simplify and structure and Storybook allows you to run and view your Vue components in isolated manner providing a great visual documentation for developers and designers.
+Atomic methodology helps to simplify the structure and Storybook allows you to run and view your Vue components in isolated manner providing a great visual documentation for developers and designers.
 
 ## Time spent to complete the test
 5 days working between 3 to 6 hours per day.

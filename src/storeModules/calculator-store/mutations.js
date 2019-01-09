@@ -1,3 +1,4 @@
+import config from '../../config'
 import math from'math-expression-evaluator'
 import calculator from '../../utils/calculator'
 import axios from 'axios'
@@ -68,8 +69,8 @@ export default {
 
     if(expressionSummary.indexOf('=') > 0 && expressionSummary !== 'SAVED')
     axios({
-      method: 'post',
-      url: 'http://localhost:8083/save-calculation',
+      method: config.apis.save.method,
+      url: config.apis.save.url,
       data: {
         expressionSummary: expressionSummary,
         expression: expression
